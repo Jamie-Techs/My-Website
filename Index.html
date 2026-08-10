@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8fafc">
+<meta name="description" content="Jay-Tech Academy & Solutions — professional web development, software engineering, technical project support, digital marketplaces, and project writing services by Agwu James Nwoke.">
+<title>Jay-Tech Solutions & Academy — Build. Understand. Deliver.</title>
+<style>
+:root{
+  --bg:#f8fafc;--bg2:#f1f5f9;--panel:rgba(255,255,255,.85);--panel2:rgba(241,245,249,.95);
+  --line:rgba(15,23,42,.1);--text:#0f172a;--muted:#475569;--soft:#334155;
+  --accent:#7c3aed;--accent2:#0891b2;--green:#059669;--gold:#d97706;
+  --shadow:0 20px 50px rgba(15,23,42,.08);--radius:20px;--max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+ radial-gradient(circle at 15% 15%,rgba(124,58,237,.06),transparent 30%),
+ radial-gradient(circle at 85% 25%,rgba(8,145,178,.05),transparent 25%),
+ linear-gradient(rgba(15,23,42,.015) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(15,23,42,.015) 1px,transparent 1px);
+background-size:auto,auto,40px 40px;z-index:-2}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at center,transparent 40%,rgba(255,255,255,.6));z-index:-1}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px 0;transition:.3s}
+.nav.scrolled{background:rgba(248,250,252,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 4px 20px rgba(15,23,42,.04)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.03em}
+.brand-mark{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:white;border:1px solid var(--line);overflow:hidden;box-shadow:0 4px 12px rgba(15,23,42,.06)}
+.brand-mark img{width:100%;height:100%;object-fit:cover}
+.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.nav-links{display:flex;gap:22px;color:var(--muted);font-size:13px;font-weight:600}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta,.btn-primary{background:linear-gradient(135deg,var(--accent),#6d28d9);color:white;border:1px solid rgba(255,255,255,.2);box-shadow:0 10px 25px rgba(124,58,237,.2)}
+.nav-cta{padding:10px 16px;border-radius:12px;font-size:12px;font-weight:800}
+.menu{display:none;background:none;border:0;color:var(--text);font-size:24px}
+
+.hero{min-height:95vh;display:grid;align-items:center;padding:140px 0 80px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:white;padding:6px 12px;border-radius:999px;color:var(--soft);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 2px 6px rgba(15,23,42,.03)}
+.pulse{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.4;transform:scale(.7)}}
+
+/* Reduced header sizes to prevent unnecessary breaking and line wrapping */
+h1{font-size:clamp(38px, 4.8vw, 64px);line-height:1.05;letter-spacing:-.04em;margin:20px 0 20px;font-weight:900}
+.gradient-text{background:linear-gradient(110deg,#0f172a 20%,var(--accent) 60%,var(--accent2) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{font-size:16px;color:var(--muted);max-width:600px;line-height:1.6}
+.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;font-size:13px;font-weight:800;border:1px solid var(--line);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:rgba(15,23,42,.25)}
+.btn-secondary{background:white;color:var(--text);box-shadow:0 4px 12px rgba(15,23,42,.04)}
+
+.hero-meta{display:flex;gap:20px;margin-top:32px;flex-wrap:wrap}
+.meta{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.meta b{display:block;color:var(--text);font-size:11px;letter-spacing:0;margin-bottom:2px}
+
+.trust-badge{display:flex;align-items:center;gap:10px;padding:14px 18px;background:white;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);margin-top:20px;font-size:12px;font-weight:600;color:var(--soft)}
+.trust-badge span{color:var(--accent);font-weight:800}
+
+.terminal{position:relative;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff,#f1f5f9);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.term-top{height:42px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 16px;gap:6px;background:rgba(255,255,255,.7)}
+.dot{width:8px;height:8px;border-radius:50%;background:#cbd5e1}.term-title{margin-left:8px;color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.term-body{padding:22px;font-family:"SFMono-Regular",Consolas,monospace;font-size:12px;min-height:340px;color:var(--soft)}
+.line{margin:8px 0}.purple{color:var(--accent);font-weight:700}.cyan{color:var(--accent2)}.green{color:var(--green)}.white{color:var(--text)}
+.cursor{display:inline-block;width:7px;height:14px;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+section{padding:90px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px}
+.kicker{color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+h2{font-size:clamp(28px, 3.8vw, 46px);line-height:1.1;letter-spacing:-.035em;margin-top:8px;font-weight:800}
+.section-head p{max-width:400px;color:var(--muted);font-size:13px}
+
+.statement{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(241,245,249,.5));padding:50px 0}
+.statement-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.statement h3{font-size:clamp(24px,3.2vw,38px);line-height:1.15;letter-spacing:-.03em}
+.statement p{color:var(--muted);font-size:15px}
+
+.capabilities{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cap{border:1px solid var(--line);background:white;padding:24px;border-radius:18px;min-height:180px;transition:.25s;position:relative;overflow:hidden;box-shadow:0 4px 15px rgba(15,23,42,.02)}
+.cap:hover{transform:translateY(-4px);border-color:rgba(124,58,237,.3);box-shadow:var(--shadow)}
+.cap-num{font-family:monospace;color:var(--muted);font-size:11px;font-weight:700}
+.cap h3{font-size:17px;margin:18px 0 6px;letter-spacing:-.02em}.cap p{font-size:12px;color:var(--muted)}
+
+/* Featured Project: Schomart Section */
+.featured-project{background:linear-gradient(135deg,#ffffff,#f8fafc);border:1px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--shadow);margin-bottom:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.feat-content h3{font-size:clamp(26px, 3.5vw, 36px);letter-spacing:-.03em;margin:10px 0 14px}
+.feat-content p{color:var(--muted);font-size:14px;margin-bottom:20px}
+.feat-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.feat-tags span{font-size:10px;font-family:monospace;padding:5px 10px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;color:var(--soft);font-weight:700}
+.feat-preview{border:1px solid var(--line);border-radius:16px;background:white;padding:20px;text-align:center;box-shadow:0 10px 30px rgba(15,23,42,.04)}
+.feat-preview-box{height:180px;border-radius:12px;background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(8,145,178,.1));display:grid;place-items:center;font-weight:800;color:var(--accent);font-size:18px;margin-bottom:15px;letter-spacing:-.02em}
+
+/* Previous Works & Portfolio Grid */
+.works-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.work-card{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;overflow:hidden;box-shadow:0 4px 15px rgba(15,23,42,.02);transition:.25s;display:flex;flex-direction:column;justify-content:space-between}
+.work-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,.3);box-shadow:var(--shadow)}
+.work-tag{font-size:9px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+.work-card h3{font-size:22px;letter-spacing:-.03em;margin:12px 0 8px}
+.work-card p{font-size:13px;color:var(--muted);margin-bottom:20px}
+.work-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--line)}
+.work-link{font-size:12px;font-weight:800;color:var(--accent);display:inline-flex;align-items:center;gap:4px}
+.work-link:hover{text-decoration:underline}
+
+/* Delivered Services Section (Project Writing & Technical Support) */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service-box{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 4px 15px rgba(15,23,42,.02)}
+.service-box h3{font-size:17px;margin-bottom:8px;letter-spacing:-.02em}
+.service-box p{font-size:12px;color:var(--muted)}
+
+.instructor-section{border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(8,145,178,.03),transparent)}
+.instructor-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.instructor-card{position:relative;border:1px solid var(--line);border-radius:24px;background:white;padding:25px;box-shadow:var(--shadow);text-align:center}
+.instructor-img-wrap{width:140px;height:140px;margin:0 auto 16px;border-radius:50%;border:2px solid var(--accent);padding:3px;background:var(--bg2)}
+.instructor-img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#e2e8f0}
+.instructor-card h4{font-size:19px;letter-spacing:-.02em;margin-bottom:4px}
+.instructor-card .role{font-family:monospace;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.instructor-content h3{font-size:clamp(24px,3.2vw,38px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 16px}
+.instructor-content p{color:var(--muted);font-size:14px;margin-bottom:14px}
+.instructor-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.instructor-tags span{font-family:monospace;font-size:10px;padding:5px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg2);color:var(--soft);font-weight:700}
+
+.cta{padding:70px 0 100px}
+.cta-box{position:relative;overflow:hidden;border:1px solid rgba(124,58,237,.2);border-radius:26px;padding:60px 45px;background:linear-gradient(135deg,#ffffff,#f1f5f9);box-shadow:var(--shadow)}
+.cta h2{max-width:700px;font-size:clamp(28px,4vw,44px);letter-spacing:-.035em}.cta p{color:var(--muted);max-width:540px;margin:16px 0 24px;font-size:14px}
+.contact-row{display:flex;gap:10px;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:11px;background:white}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+ .hero-grid,.statement-grid,.standard,.instructor-grid,.featured-project{grid-template-columns:1fr}
+ .hero{padding-top:120px}
+ .capabilities,.services-grid{grid-template-columns:1fr 1fr}
+ .works-grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ .container{width:min(calc(100% - 24px),var(--max))}
+ .nav-links,.nav-cta{display:none}.menu{display:block}
+ .hero{padding-top:110px}
+ .capabilities,.services-grid{grid-template-columns:1fr}
+ section{padding:70px 0}.cta-box{padding:40px 20px}
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <!-- Jay-Tech logo fetched directly from GitHub repository -->
+      <span class="brand-mark"><img src="https://raw.githubusercontent.com/James19199/Schomart-Marketplace/main/assets/images/logo.png" alt="Jay-Tech Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%237c3aed\' stroke-width=\'2\'><path d=\'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\'/></svg>'"></span>
+      <span>JAY-TECH SOLUTIONS<small>Software • Web Dev • Mentorship</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#schomart">Schomart</a><a href="#portfolio">Previous Works</a><a href="#services">Services</a><a href="#instructor">Lead</a><a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://wa.link/4bsuma" target="_blank" rel="noopener">HIRE US ↗</a>
+    <button class="menu" id="menu" aria-label="Open navigation">☰</button>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <span class="eyebrow"><i class="pulse"></i> Full-Service Web Development & Management</span>
+   <h1>BUILD.<br><span class="gradient-text">DEPLOY.</span><br>MANAGE.</h1>
+   <p class="hero-copy">Jay-Tech Solutions delivers high-performance websites, scalable web apps, complete digital platforms, and technical project services. Trust us to build, launch, and fully manage your digital presence from end to end.</p>
+   
+   <div class="trust-badge">
+    <span>✓ Trusted Partner</span> Schomart Creator & Professional Web Engineering Expert
+   </div>
+
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="https://wa.link/4bsuma" target="_blank" rel="noopener">Request Website Development ↗</a>
+    <a class="btn btn-secondary" href="#portfolio">Explore Previous Works ↓</a>
+   </div>
+   <div class="hero-meta">
+    <div class="meta"><b>01 / WEB APPS</b>Full-Stack Systems</div>
+    <div class="meta"><b>02 / MANAGEMENT</b>Hosting & Maintenance</div>
+    <div class="meta"><b>03 / ACADEMIC & TECH</b>Project Writing Works</div>
+   </div>
+  </div>
+  <div class="reveal">
+   <div class="terminal">
+    <div class="term-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="term-title">jaytech / solutions-console</span></div>
+    <div class="term-body" id="terminalBody">
+      <div class="line"><span class="purple">jay@solutions</span>:<span class="cyan">~</span>$ client_request --verify</div>
+      <div class="line green">✓ Full-stack web engineering ready</div>
+      <div class="line green">✓ Automated deployment systems active</div>
+      <div class="line green">✓ Infrastructure management online</div>
+      <div class="line"><span class="purple">jay@solutions</span>:<span class="cyan">~</span>$ system.status()</div>
+      <div class="line white">{</div>
+      <div class="line">&nbsp;&nbsp;"status": <span class="green">"AVAILABLE FOR HIRE"</span>,</div>
+      <div class="line">&nbsp;&nbsp;"services": <span class="green">"Web Design, Dev & Management"</span>,</div>
+      <div class="line">&nbsp;&nbsp;"reliability": <span class="green">"100% Production Grade"</span></div>
+      <div class="line white">}</div>
+      <div class="line"><span class="purple">jay@solutions</span>:<span class="cyan">~</span>$ <span class="cursor"></span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="statement">
+ <div class="container statement-grid reveal">
+  <div><div class="kicker">01 / Why Work With Us</div><h3>More than an agency.<br><span class="gradient-text">Your dedicated tech partner.</span></h3></div>
+  <div><p>When you hire Jay-Tech Solutions, you are not just getting a temporary script or a basic landing page. You get a fully functional, highly secure, scalable website or platform built by professional software engineers, backed up with ongoing maintenance and full management support if you need it.</p></div>
+ </div>
+</section>
+
+<!-- Featured Project Section: Schomart -->
+<section id="schomart">
+ <div class="container">
+  <div class="section-head reveal">
+   <div><div class="kicker">02 / Flagship Product</div><h2>Schomart Ecosystem</h2></div>
+   <p>Our premier digital marketplace and campus services platform built to empower student sellers and service providers.</p>
+  </div>
+  
+  <div class="featured-project reveal">
+   <div class="feat-content">
+    <span class="work-tag">FEATURED WEB APPLICATION</span>
+    <h3>Schomart LTD</h3>
+    <p>A comprehensive digital marketplace engineered with secure payment verification loops, multi-currency display filters, real-time messaging, and interactive dashboard interfaces designed for optimal student commerce.</p>
+    <div class="feat-tags">
+     <span>Full-Stack Platform</span><span>Supabase</span><span>Python / Flask</span><span>Secure Payments</span><span>Cloud Hosting</span>
+    </div>
+    <div class="contact-row" style="margin-top: 15px;">
+     <a class="btn btn-primary" href="https://github.com/James19199/Schomart-Marketplace" target="_blank" rel="noopener">Explore Schomart on GitHub ↗</a>
+    </div>
+   </div>
+   <div class="feat-preview">
+    <div class="feat-preview-box">Schomart Platform Preview</div>
+    <p style="font-size: 12px; color: var(--muted);">Engineered and managed by Jay-Tech Solutions.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Previous Works & Projects Section -->
+<section id="portfolio">
+ <div class="container">
+  <div class="section-head reveal">
+   <div><div class="kicker">03 / Proven Portfolio</div><h2>Previous works & web projects.</h2></div>
+   <p>Explore some of the web applications, custom platforms, and digital systems successfully built and deployed for clients.</p>
+  </div>
+  
+  <div class="works-grid">
+   <article class="work-card reveal">
+    <div>
+     <span class="work-tag">WEB APPLICATION / E-COMMERCE</span>
+     <h3>Schomart Marketplace</h3>
+     <p>Multi-vendor digital marketplace optimized for student services, featuring dynamic listings, secure order processing, and user dashboards.</p>
+    </div>
+    <div class="work-footer">
+     <span style="font-size: 11px; color: var(--muted);">Status: Live & Managed</span>
+     <a class="work-link" href="https://github.com/James19199/Schomart-Marketplace" target="_blank" rel="noopener">View Repository ↗</a>
+    </div>
+   </article>
+
+   <article class="work-card reveal">
+    <div>
+     <span class="work-tag">AUTOMATED SYSTEM / FINTECH</span>
+     <h3>DegenBot Crypto Scanner</h3>
+     <p>Real-time cryptocurrency scanning application tracking newly launched tokens across multiple blockchains with instant alert dispatching.</p>
+    </div>
+    <div class="work-footer">
+     <span style="font-size: 11px; color: var(--muted);">Status: Production Script</span>
+     <a class="work-link" href="https://github.com/James19199" target="_blank" rel="noopener">Explore Code ↗</a>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- Delivered Services Section (Including Project Writing Works) -->
+<section id="services">
+ <div class="container">
+  <div class="section-head reveal">
+   <div><div class="kicker">04 / Comprehensive Offerings</div><h2>Other delivered services.</h2></div>
+   <p>Professional services successfully delivered to clients, students, and businesses over the years.</p>
+  </div>
+  
+  <div class="services-grid">
+   <div class="service-box reveal">
+    <h3>Project Writing Works</h3>
+    <p>Professional technical documentation, software engineering project reports, capstone documentation, and academic/research writing support.</p>
+   </div>
+   <div class="service-box reveal">
+    <h3>Website Management & Maintenance</h3>
+    <p>End-to-end management, database upkeep, security updates, feature expansions, and server hosting monitoring for active websites.</p>
+   </div>
+   <div class="service-box reveal">
+    <h3>API & Backend Architecture</h3>
+    <p>Custom REST and WebSocket API development, secure user authentication systems, and cloud database schema design.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="expertise">
+ <div class="container">
+  <div class="section-head reveal">
+   <div><div class="kicker">05 / Core Capabilities</div><h2>Technical expertise.</h2></div>
+   <p>Robust development standards applied across every project we take on.</p>
+  </div>
+  <div class="capabilities">
+   <article class="cap reveal"><span class="cap-num">01</span><h3>Full-Stack Web Dev</h3><p>Complete frontend and backend systems built with modern frameworks and reliable databases.</p></article>
+   <article class="cap reveal"><span class="cap-num">02</span><h3>Website Management</h3><p>Let us handle hosting, updates, backups, and routine maintenance so you can focus on your business.</p></article>
+   <article class="cap reveal"><span class="cap-num">03</span><h3>Project Writing & Tech Docs</h3><p>Rigorous technical writing, project documentation, and structured reports for software systems.</p></article>
+  </div>
+ </div>
+</section>
+
+<!-- Instructor / Founder Profile Section -->
+<section id="instructor" class="instructor-section">
+ <div class="container instructor-grid">
+  <div class="reveal">
+   <div class="instructor-card">
+    <div class="instructor-img-wrap">
+       <img src="https://raw.githubusercontent.com/James19199/Schomart-Marketplace/main/assets/images/logo.png" alt="Agwu James Nwoke" class="instructor-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%237c3aed\' stroke-width=\'1\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2\'/></svg>'">
+    </div>
+    <h4>Agwu James Nwoke</h4>
+    <div class="role">Founder & Lead Engineer</div>
+   </div>
+  </div>
+  <div class="instructor-content reveal">
+   <div class="kicker">06 / Leadership</div>
+   <h3>Engineering excellence you can trust.</h3>
+   <p>As a software developer and founder of Schomart LTD, Agwu James Nwoke leads Jay-Tech Solutions with an uncompromising commitment to reliable software architecture, clean code, and client satisfaction.</p>
+   <p>Whether you need a custom website built from scratch, technical project writing, or a dependable partner to manage your digital infrastructure, you are working directly with an experienced professional.</p>
+   <div class="instructor-tags">
+    <span>Software Engineering</span><span>Full-Stack Development</span><span>Project Management</span><span>Technical Writing</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact" class="cta">
+ <div class="container">
+  <div class="cta-box reveal">
+   <div class="kicker">07 / Get Started</div>
+   <h2>READY TO BUILD OR MANAGE<br><span class="gradient-text">YOUR WEBSITE?</span></h2>
+   <p>Hire Jay-Tech Solutions today to build your website fully, manage your infrastructure, or handle your technical project writing works with professional precision.</p>
+   <div class="contact-row">
+    <a class="btn btn-primary" href="https://wa.link/4bsuma" target="_blank" rel="noopener">Contact via WhatsApp ↗</a>
+    <a class="btn btn-secondary" href="tel:+2348129284013">Call +234 812 928 4013</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <span>© <span id="year"></span> Jay-Tech Solutions & Academy. All rights reserved.</span>
+  <span>Build. Understand. Deliver. Manage.</span>
+  <span>Powered by Schomart LTD.</span>
+ </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>30));
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const menu=document.getElementById('menu');
+menu.addEventListener('click',()=>{
+ const links=document.querySelector('.nav-links');
+ const open=links.style.display==='flex';
+ links.style.display=open?'none':'flex';
+ if(!open){
+   links.style.position='absolute';links.style.top='70px';links.style.left='14px';links.style.right='14px';
+   links.style.flexDirection='column';links.style.padding='20px';links.style.background='white';
+   links.style.border='1px solid var(--line)';links.style.borderRadius='16px';
+   links.style.boxShadow='0 20px 40px rgba(15,23,42,.1)';
+ }
+});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+ if(innerWidth<=650) document.querySelector('.nav-links').style.display='none';
+}));
+</script>
+</body>
+</html>
