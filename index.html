@@ -142,36 +142,24 @@
       </div>
       <p>Our premier digital marketplace and campus services platform built to empower student sellers and service providers.</p>
     </div>
-    <div class="featured-project reveal">
-      <div class="feat-content">
-        <span class="work-tag">FEATURED WEB APPLICATION</span>
-        <h3>Schomart LTD</h3>
-        <p>
-          A comprehensive digital marketplace engineered with
-          secure payment verification loops, multi-currency
-          display filters, real-time messaging, and interactive
-          dashboard interfaces designed for student commerce.
-        </p>
-        <div class="feat-tags">
-          <span>Full-Stack Platform</span>
-          <span>Firebase/Firestore</span>
-          <span>Python / Flask</span>
-          <span>Secure Payments</span>
-          <span>Cloud Hosting</span>
-        </div>
-        <div class="contact-row" style="margin-top:15px;">
-          <a class="btn btn-primary" href="https://www.schomart.org" target="_blank" rel="noopener">Explore Schomart ↗</a>
-        </div>
-      </div>
-      <div class="feat-preview">
-        <div class="feat-preview-box" style="position:relative; overflow:hidden; padding:0;">
-          <div class="schomart-slideshow" style="position:relative; width:100%; height:100%;">
-            <img class="schomart-slide" src="IMG_0526.jpeg" alt="Schomart Preview 1" style="width:100%; height:100%; object-fit:contain; display:block;">
-            <img class="schomart-slide" src="IMG_1149.jpeg" alt="Schomart Preview 2" style="width:100%; height:100%; object-fit:contain; display:none;">
+    <div class="works-grid">
+      <article class="work-card reveal">
+        <div>
+          <span class="work-tag">FEATURED WEB APPLICATION</span>
+          <h3>Schomart LTD</h3>
+          <p>A comprehensive digital marketplace engineered with secure payment verification loops, multi-currency display filters, real-time messaging, and interactive dashboard interfaces designed for student commerce.</p>
+          <div style="margin: 15px 0; border-radius: 8px; overflow: hidden; height: 160px; background: rgba(255,255,255,0.05); position: relative;">
+            <div class="schomart-slideshow" style="width: 100%; height: 100%; position: relative;">
+              <img class="schomart-slide" src="IMG_0526.jpeg" alt="Schomart Preview 1" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+              <img class="schomart-slide" src="IMG_1149.jpeg" alt="Schomart Preview 2" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+            </div>
           </div>
         </div>
-        <p style="font-size:12px; color:var(--muted);">Engineered and managed by Jay-Tech Solutions.</p>
-      </div>
+        <div class="work-footer">
+          <span style="font-size:11px; color:var(--muted);">Status: Live & Managed</span>
+          <a class="work-link" href="https://www.schomart.org" target="_blank" rel="noopener">Visit Live Site ↗</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -439,7 +427,7 @@ function showNextSchomartSlide() {
   schomartSlides[currentSchomartSlide].style.display = 'block';
 }
 if (schomartSlides.length > 0) {
-  setInterval(showNextSchomartSlide, 3000);
+  setInterval(showNextSchomartSlide, 3500);
 }
 </script>
 <script>
