@@ -149,9 +149,8 @@
           <h3>Schomart LTD</h3>
           <p>A comprehensive digital marketplace engineered with secure payment verification loops, multi-currency display filters, real-time messaging, and interactive dashboard interfaces designed for student commerce.</p>
           <div style="margin: 15px 0; border-radius: 8px; overflow: hidden; height: 160px; background: rgba(255,255,255,0.05); position: relative;">
-            <div class="schomart-slideshow" style="width: 100%; height: 100%; position: relative;">
-              <img class="schomart-slide" src="IMG_0526.jpeg" alt="Schomart Preview 1" style="width: 100%; height: 100%; object-fit: contain; display: block;">
-              <img class="schomart-slide" src="IMG_1149.jpeg" alt="Schomart Preview 2" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+            <div style="width: 100%; height: 100%; position: relative;">
+              <img src="IMG_0526.jpeg" alt="Schomart Preview" style="width: 100%; height: 100%; object-fit: contain; display: block;">
             </div>
           </div>
         </div>
@@ -179,9 +178,8 @@
           <h3>Schomart Marketplace</h3>
           <p>Multi-vendor digital marketplace optimized for student services, featuring dynamic listings, secure order processing, and user dashboards.</p>
           <div style="margin: 15px 0; border-radius: 8px; overflow: hidden; height: 160px; background: rgba(255,255,255,0.05); position: relative;">
-            <div class="portfolio-slideshow-1" style="width: 100%; height: 100%; position: relative;">
-              <img class="p-slide-1" src="IMG_0526.jpeg" alt="Schomart Preview 1" style="width: 100%; height: 100%; object-fit: contain; display: block;">
-              <img class="p-slide-1" src="IMG_1149.jpeg" alt="Schomart Preview 2" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+            <div style="width: 100%; height: 100%; position: relative;">
+              <img src="IMG_0526.jpeg" alt="Schomart Preview" style="width: 100%; height: 100%; object-fit: contain; display: block;">
             </div>
           </div>
         </div>
@@ -196,9 +194,8 @@
           <h3>DegenBot Crypto Scanner</h3>
           <p>Real-time cryptocurrency scanning application tracking newly launched tokens across multiple blockchains with instant alert dispatching.</p>
           <div style="margin: 15px 0; border-radius: 8px; overflow: hidden; height: 160px; background: rgba(255,255,255,0.05); position: relative;">
-            <div class="portfolio-slideshow-2" style="width: 100%; height: 100%; position: relative;">
-              <img class="p-slide-2" src="IMG_1149.jpeg" alt="DegenBot Preview 1" style="width: 100%; height: 100%; object-fit: contain; display: block;">
-              <img class="p-slide-2" src="IMG_0526.jpeg" alt="DegenBot Preview 2" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+            <div style="width: 100%; height: 100%; position: relative;">
+              <img src="IMG_1149.jpeg" alt="DegenBot Preview" style="width: 100%; height: 100%; object-fit: contain; display: block;">
             </div>
           </div>
         </div>
@@ -416,33 +413,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     }
   });
 });
-</script>
-<script>
-let currentSchomartSlide = 0;
-const schomartSlides = document.querySelectorAll('.schomart-slide');
-function showNextSchomartSlide() {
-  if (schomartSlides.length === 0) return;
-  schomartSlides[currentSchomartSlide].style.display = 'none';
-  currentSchomartSlide = (currentSchomartSlide + 1) % schomartSlides.length;
-  schomartSlides[currentSchomartSlide].style.display = 'block';
-}
-if (schomartSlides.length > 0) {
-  setInterval(showNextSchomartSlide, 3500);
-}
-</script>
-<script>
-function setupPortfolioSlideshow(slideClass) {
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.' + slideClass);
-  if (slides.length === 0) return;
-  setInterval(() => {
-    slides[currentIndex].style.display = 'none';
-    currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].style.display = 'block';
-  }, 3500);
-}
-setupPortfolioSlideshow('p-slide-1');
-setupPortfolioSlideshow('p-slide-2');
 </script>
 </body>
 </html>
